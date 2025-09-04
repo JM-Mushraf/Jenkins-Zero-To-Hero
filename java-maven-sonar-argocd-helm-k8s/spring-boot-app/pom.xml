@@ -9,7 +9,6 @@
     <version>1.0</version>
 
     <name>spring-boot-demo</name>
-    <url></url>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -25,7 +24,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -39,20 +37,15 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!-- debugging -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
-
     </dependencies>
 
     <build>
-
         <finalName>spring-boot-web</finalName>
-
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -67,9 +60,12 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-
+            <!-- SonarQube plugin compatible with Java 11 -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
+            </plugin>
         </plugins>
     </build>
-
-
 </project>
